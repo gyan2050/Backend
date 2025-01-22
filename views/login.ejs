@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>login page</title>
+    <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+    
+    
+    <main>
+        <form method="post" action="/login">
+            <div style="display: flex; align-items: center; justify-content: center; text-decoration: underline; color: rgb(2, 42, 33);">
+                <h1>Login Now</h1>
+            </div>
+            <div class="input-section">
+                <input type="email" name="email" placeholder="email" required>
+                <input type="password" name="password" placeholder="password" required>
+                <div style="display: flex; text-align : center;">
+                    <% if (message) { %>
+                        <p style="color: red;"><%= message %></p>
+                    <% } %>
+                </div>
+            </div>
+            <button type="submit">login</button>
+        </form>
+    </main>
+
+    <script>
+        const message = "<%= message %>";
+
+        if(message === "User Not Found!"){
+            alert("User Not Found!");
+            // setTimeout(() => {
+                
+            // },0);
+            // window.location.href = "/register";
+        }
+    </script>
+</body>
+</html>
